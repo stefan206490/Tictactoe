@@ -839,7 +839,6 @@ namespace tictactoeAI
 
         private void btnRestart_Click(object sender, RoutedEventArgs e)
         {
-
             Restart();
         }
         public void Restart()
