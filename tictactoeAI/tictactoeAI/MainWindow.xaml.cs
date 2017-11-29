@@ -24,8 +24,10 @@ namespace tictactoeAI
         public bool AI = false;
         public bool AIzet = true;
         public string strLastMove = string.Empty;
+        public bool btnMarked = false;
         public string check = string.Empty;
         public int ronde = 0;
+        public int ColorRound = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -358,6 +360,19 @@ namespace tictactoeAI
                 turn = true;
                 AIzet = false;
             }
+            if (ronde-1 == ColorRound)
+            {
+                btn1.Background = Brushes.White;
+                btn2.Background = Brushes.White;
+                btn3.Background = Brushes.White;
+                btn4.Background = Brushes.White;
+                btn5.Background = Brushes.White;
+                btn6.Background = Brushes.White;
+                btn7.Background = Brushes.White;
+                btn8.Background = Brushes.White;
+                btn9.Background = Brushes.White;
+
+            }
             CheckWon();
             if (turn)
             {
@@ -529,124 +544,152 @@ namespace tictactoeAI
             if (btn1.Content.ToString() == " " && btn2.Content.ToString() == check && btn3.Content.ToString() == check)
             {
                 //eerste horizontale lijn 1
+                btnMarked = true;
                 btn1.Background = Brushes.Green;
             }
-            else if (btn1.Content.ToString() == check && btn2.Content.ToString() == " " && btn3.Content.ToString() == check)
+            if (btn1.Content.ToString() == check && btn2.Content.ToString() == " " && btn3.Content.ToString() == check)
             {
                 //eerste horizontale lijn 2
+                btnMarked = true;
                 btn2.Background = Brushes.Green;
             }
-            else if (btn1.Content.ToString() == check && btn2.Content.ToString() == check && btn3.Content.ToString() == " ")
+            if (btn1.Content.ToString() == check && btn2.Content.ToString() == check && btn3.Content.ToString() == " ")
             {
                 //eerste horizontale lijn 3
+                btnMarked = true;
                 btn3.Background = Brushes.Green;
             }
-            else if (btn1.Content.ToString() == " " && btn5.Content.ToString() == check && btn9.Content.ToString() == check)
+            if (btn1.Content.ToString() == " " && btn5.Content.ToString() == check && btn9.Content.ToString() == check)
             {
                 //schuin boven links onder rechts 1
+                btnMarked = true;
                 btn1.Background = Brushes.Green;
             }
-            else if (btn1.Content.ToString() == check && btn5.Content.ToString() == check && btn9.Content.ToString() == check)
+            if (btn1.Content.ToString() == check && btn5.Content.ToString() == check && btn9.Content.ToString() == check)
             {
                 //schuin boven links onder rechts 2
+                btnMarked = true;
                 btn5.Background = Brushes.Green;
             }
-            else if (btn1.Content.ToString() == check && btn5.Content.ToString() == check && btn9.Content.ToString() == " ")
+            if (btn1.Content.ToString() == check && btn5.Content.ToString() == check && btn9.Content.ToString() == " ")
             {
                 //schuin boven links onder rechts 3
+                btnMarked = true;
                 btn9.Background = Brushes.Green;
             }
-            else if (btn1.Content.ToString() == " " && btn4.Content.ToString() == check && btn7.Content.ToString() == check)
+            if (btn1.Content.ToString() == " " && btn4.Content.ToString() == check && btn7.Content.ToString() == check)
             {
                 //eerste verticale lijn 1
+                btnMarked = true;
                 btn1.Background = Brushes.Green;
             }
-            else if (btn1.Content.ToString() == check && btn4.Content.ToString() == " " && btn7.Content.ToString() == check)
+            if (btn1.Content.ToString() == check && btn4.Content.ToString() == " " && btn7.Content.ToString() == check)
             {
                 //eerste verticale lijn 2
+                btnMarked = true;
                 btn4.Background = Brushes.Green;
             }
-            else if (btn1.Content.ToString() == check && btn4.Content.ToString() == check && btn7.Content.ToString() == " ")
+            if (btn1.Content.ToString() == check && btn4.Content.ToString() == check && btn7.Content.ToString() == " ")
             {
                 //eerste verticale lijn 3
+                btnMarked = true;
                 btn7.Background = Brushes.Green;
             }
-            else if (btn2.Content.ToString() == " " && btn5.Content.ToString() == check && btn8.Content.ToString() == check)
+            if (btn2.Content.ToString() == " " && btn5.Content.ToString() == check && btn8.Content.ToString() == check)
             {
                 //tweede verticale lijn 1
+                btnMarked = true;
                 btn2.Background = Brushes.Green;
             }
-            else if (btn2.Content.ToString() == check && btn5.Content.ToString() == " " && btn8.Content.ToString() == check)
+            if (btn2.Content.ToString() == check && btn5.Content.ToString() == " " && btn8.Content.ToString() == check)
             {
                 //tweede verticale lijn 2
+                btnMarked = true;
                 btn5.Background = Brushes.Green;
             }
-            else if (btn2.Content.ToString() == check && btn5.Content.ToString() == check && btn8.Content.ToString() == " ")
+            if (btn2.Content.ToString() == check && btn5.Content.ToString() == check && btn8.Content.ToString() == " ")
             {
                 //tweede verticale lijn 3
+                btnMarked = true;
                 btn8.Background = Brushes.Green;
             }
-            else if (btn4.Content.ToString() == " " && btn5.Content.ToString() == check && btn6.Content.ToString() == check)
+            if (btn4.Content.ToString() == " " && btn5.Content.ToString() == check && btn6.Content.ToString() == check)
             {
                 //tweede horizontale lijn 1
+                btnMarked = true;
                 btn4.Background = Brushes.Green;
             }
-            else if (btn4.Content.ToString() == check && btn5.Content.ToString() == " " && btn6.Content.ToString() == check)
+            if (btn4.Content.ToString() == check && btn5.Content.ToString() == " " && btn6.Content.ToString() == check)
             {
                 //tweede horizontale lijn 2
+                btnMarked = true;
                 btn5.Background = Brushes.Green;
             }
-            else if (btn4.Content.ToString() == check && btn5.Content.ToString() == check && btn6.Content.ToString() == " ")
+            if (btn4.Content.ToString() == check && btn5.Content.ToString() == check && btn6.Content.ToString() == " ")
             {
                 //tweede horizontale lijn 3
+                btnMarked = true;
                 btn6.Background = Brushes.Green;
             }
-            else if (btn3.Content.ToString() == " " && btn5.Content.ToString() == check && btn7.Content.ToString() == check)
+            if (btn3.Content.ToString() == " " && btn5.Content.ToString() == check && btn7.Content.ToString() == check)
             {
                 //schuin boven rechts onder links 1
+                btnMarked = true;
                 btn3.Background = Brushes.Green;
             }
-            else if (btn3.Content.ToString() == check && btn5.Content.ToString() == " " && btn7.Content.ToString() == check)
+            if (btn3.Content.ToString() == check && btn5.Content.ToString() == " " && btn7.Content.ToString() == check)
             {
                 //schuin boven rechts onder links 2
+                btnMarked = true;
                 btn5.Background = Brushes.Green;
             }
-            else if (btn3.Content.ToString() == check && btn5.Content.ToString() == check && btn7.Content.ToString() == " ")
+            if (btn3.Content.ToString() == check && btn5.Content.ToString() == check && btn7.Content.ToString() == " ")
             {
                 //schuin boven rechts onder links 3
+                btnMarked = true;
                 btn7.Background = Brushes.Green;
             }
-            else if (btn7.Content.ToString() == " " && btn8.Content.ToString() == check && btn9.Content.ToString() == check)
+            if (btn7.Content.ToString() == " " && btn8.Content.ToString() == check && btn9.Content.ToString() == check)
             {
                 //derde horizontale lijn 1
+                btnMarked = true;
                 btn7.Background = Brushes.Green;
             }
-            else if (btn7.Content.ToString() == check && btn8.Content.ToString() == " " && btn9.Content.ToString() == check)
+            if (btn7.Content.ToString() == check && btn8.Content.ToString() == " " && btn9.Content.ToString() == check)
             {
                 //derde horizontale lijn 2
+                btnMarked = true;
                 btn8.Background = Brushes.Green;
             }
-            else if (btn7.Content.ToString() == check && btn8.Content.ToString() == check && btn9.Content.ToString() == " ")
+            if (btn7.Content.ToString() == check && btn8.Content.ToString() == check && btn9.Content.ToString() == " ")
             {
                 //derde horizontale lijn 3
+                btnMarked = true;
                 btn9.Background = Brushes.Green;
             }
-            else if (btn3.Content.ToString() == " " && btn6.Content.ToString() == check && btn9.Content.ToString() == check)
+            if (btn3.Content.ToString() == " " && btn6.Content.ToString() == check && btn9.Content.ToString() == check)
             {
                 //derde verticale lijn 1
+                btnMarked = true;
                 btn3.Background = Brushes.Green;
             }
-            else if (btn3.Content.ToString() == check && btn6.Content.ToString() == " " && btn9.Content.ToString() == check)
+            if (btn3.Content.ToString() == check && btn6.Content.ToString() == " " && btn9.Content.ToString() == check)
             {
                 //derde verticale lijn 2
+                btnMarked = true;
                 btn6.Background = Brushes.Green;
             }
-            else if (btn3.Content.ToString() == check && btn6.Content.ToString() == check && btn9.Content.ToString() == " ")
+            if (btn3.Content.ToString() == check && btn6.Content.ToString() == check && btn9.Content.ToString() == " ")
             {
                 //derde verticale lijn 3
+                btnMarked = true;
                 btn9.Background = Brushes.Green;
             }
-
+            if (btnMarked)
+            {
+                ColorRound = ronde;
+                btnMarked = false;
+            }
         }
 
         public void AIMove()
@@ -862,6 +905,7 @@ namespace tictactoeAI
             btn7.Background = Brushes.White;
             btn8.Background = Brushes.White;
             btn9.Background = Brushes.White;
+            btnMarked = false;
             turn = true;
             lblturn.Content = "X his turn";
         }
