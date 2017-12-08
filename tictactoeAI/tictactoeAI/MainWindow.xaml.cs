@@ -519,16 +519,6 @@ namespace tictactoeAI
 
         }
 
-        /*
-         * 
-         * 
-         * 
-         * hier ga ik hints geven!!!!!!
-         * 
-         * 
-         * 
-         */
-
 
         public void Hint(object sender, RoutedEventArgs e)
         {
